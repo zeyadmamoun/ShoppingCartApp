@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.shoppingcart.ui.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.shoppingcart.ui.fragments.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_billFragment"
+            app:destination="@id/billFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_mapFragment2"
+            app:destination="@id/mapFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/billFragment"
+        android:name="com.example.shoppingcart.ui.fragments.BillFragment"
+        android:label="fragment_bill"
+        tools:layout="@layout/fragment_bill" />
+    <fragment
+        android:id="@+id/mapFragment2"
+        android:name="com.example.shoppingcart.ui.fragments.MapFragment"
+        android:label="MapFragment" />
+    <dialog
+        android:id="@+id/cashierDialog"
+        android:name="com.example.shoppingcart.ui.dialogs.CashierDialog"
+        android:label="CashierDialog" >
+        <action
+            android:id="@+id/action_cashierDialog_to_startFragment"
+            app:destination="@id/startFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/paymentGatewayDialog"
+        android:name="com.example.shoppingcart.ui.dialogs.PaymentGatewayDialog"
+        android:label="PaymentGatewayDialog" >
+        <action
+            android:id="@+id/action_paymentGatewayDialog_to_startFragment"
+            app:destination="@id/startFragment" />
+    </dialog>
+</navigation>
